@@ -1,31 +1,93 @@
-import React from "react";
+import React, { useState } from "react";
 import heroImg from "../../public/images/main.png"; // replace with your image
+import ScrollVelocity from "../../Animations/ScrollVelocity";
 
 function Header() {
-  return (
-    <header className="relative w-full h-screen bg-black flex items-center justify-center overflow-hidden">
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      {/* Top Right Menu */}
-      <nav className="absolute top-6 right-10">
-        <ul className="flex gap-8 text-white text-sm font-medium">
-          <li className="cursor-pointer hover:text-red-400 transition">Home</li>
-          <li className="cursor-pointer hover:text-red-400 transition">About</li>
-          <li className="cursor-pointer hover:text-red-400 transition">Services</li>
-          <li className="cursor-pointer hover:text-red-400 transition">Contact</li>
+  return (
+    <header className="relative w-full h-screen bg-white flex items-center justify-center overflow-hidden">
+
+      {/* Top Right Menu - Desktop */}
+      <nav className="hidden md:flex absolute top-6 right-10">
+        <ul className="flex gap-8 text-black text-sm font-medium">
+          <li className="cursor-pointer relative group">
+            <span className=" transition">Products</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+          </li>
+          <li className="cursor-pointer relative group">
+            <span className=" transition">Collection</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+          </li>
+          <li className="cursor-pointer relative group">
+            <span className=" transition">Contact</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+          </li>
+          <li className="cursor-pointer relative group">
+            <span className=" transition">Login</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+          </li>
         </ul>
       </nav>
 
+      {/* Mobile Menu Button */}
+      <button 
+        className="md:hidden absolute top-6 right-6 z-50 text-black"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <svg 
+          className="w-8 h-8" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          {isMenuOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`md:hidden fixed inset-0 bg-white z-40 transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <nav className="flex flex-col items-center justify-center h-full">
+          <ul className="flex flex-col gap-8 text-black text-xl font-medium">
+            <li className="cursor-pointer relative group">
+              <span className=" transition">Products</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+            </li>
+            <li className="cursor-pointer relative group">
+              <span className=" transition">Collection</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+            </li>
+            <li className="cursor-pointer relative group">
+              <span className=" transition">Contact</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+            </li>
+            <li className="cursor-pointer relative group">
+              <span className=" transition">Login</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
       {/* Background Big Text */}
-      <h1 className="absolute text-[120px] md:text-[180px] font-extrabold text-white/5 tracking-[20px] select-none">
-        CREATIVE
-      </h1>
+<h1 className="absolute text-[120px] md:text-[180px] font-extrabold tracking-[20px] select-none">
+  <ScrollVelocity
+    texts={['Trendz']}
+    velocity={100}
+    className="custom-scroll-text text-outline"
+  />
+</h1>
 
       {/* Center Image */}
       <div className="relative z-10">
         <img
           src={heroImg}
           alt="hero"
-          className="w-[450px] md:w-[650px] object-contain"
+          className="w-[450px] md:w-[650px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
         />
       </div>
 

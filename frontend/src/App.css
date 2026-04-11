@@ -182,3 +182,9 @@
     border-right-color: var(--border);
   }
 }
+
+.text-outline {
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
