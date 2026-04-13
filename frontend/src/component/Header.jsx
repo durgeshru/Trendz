@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import heroImg from "../../public/images/main.png"; // replace with your image
+import heroImg from "../../public/images/head.png"; // replace with your image
 import ScrollVelocity from "../../Animations/ScrollVelocity";
 
 function Header() {
@@ -10,7 +10,7 @@ function Header() {
 
       {/* Top Right Menu - Desktop */}
       <nav className="hidden md:flex absolute top-6 right-10">
-        <ul className="flex gap-8 text-black text-sm font-medium">
+        <ul className="flex gap-8 text-black text-lg font-medium uppercase">
           <li className="cursor-pointer relative group">
             <span className=" transition">Products</span>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -74,12 +74,8 @@ function Header() {
       </div>
 
       {/* Background Big Text */}
-<h1 className="absolute text-[120px] md:text-[180px] font-extrabold tracking-[20px] select-none">
-  <ScrollVelocity
-    texts={['Trendz']}
-    velocity={100}
-    className="custom-scroll-text text-outline"
-  />
+      <h1 className="custom-scroll-text  absolute text-[120px] md:text-[180px] font-extrabold tracking-[20px] select-none">
+TRENDZ
 </h1>
 
       {/* Center Image */}

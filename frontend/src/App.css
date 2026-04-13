@@ -183,8 +183,19 @@
   }
 }
 
-.text-outline {
+/* .text-outline {
   color: white;
   -webkit-text-stroke: 1px black;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+} */
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('./assets/DoctorGlitch.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.custom-scroll-text{
+  font-family: 'MyFont', sans-serif;
 }
