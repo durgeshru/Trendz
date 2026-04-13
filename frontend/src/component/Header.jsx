@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import heroImg from "../../public/images/head.png"; // replace with your image
-import ScrollVelocity from "../../Animations/ScrollVelocity";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,9 +73,9 @@ function Header() {
       </div>
 
       {/* Background Big Text */}
-      <h1 className="custom-scroll-text  absolute text-[120px] md:text-[180px] font-extrabold tracking-[20px] select-none">
-TRENDZ
-</h1>
+      <h1 className="custom-scroll-text absolute text-[120px] md:text-[180px] font-extrabold tracking-[20px] select-none">
+        TRENDZ
+      </h1>
 
       {/* Center Image */}
       <div className="relative z-10">

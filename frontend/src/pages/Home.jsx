@@ -1,13 +1,15 @@
 import React from 'react'
 import Header from '../component/Header'
-import About from '../component/About'
-import MarseilleHero from '../component/Header'
+import AboutUs from '../component/AboutUs'
+import Trending from '../component/Trending'
+
 
 function Home() {
   return (
 <>
-<MarseilleHero/>
-<About/>
+<Header/>
+<AboutUs/>
+<Trending/>
 
 </>
 
